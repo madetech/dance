@@ -7,7 +7,11 @@ import MainSection from '../../components/MainSection'
 import * as TodoActions from '../../actions/todos'
 import style from './style.css'
 
-class App extends Component {
+export class App extends Component {
+  componentWillMount() {
+    this.props.actions.loadTodos();
+  }
+
   render() {
     const { todos, actions, children } = this.props
     return (

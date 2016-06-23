@@ -5,7 +5,7 @@
   "description": "A boilerplate of things that shouldn't exist",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require client/spec/specHelper --compilers js:babel-register client/spec/{*/*,*}/*Spec.js",
+    "test": "mocha --require client/spec/specHelper --require ignore-styles --compilers js:babel-register client/spec/{*/*,*}/*Spec.js",
     "start": "webpack-dev-server -d --history-api-fallback --hot --inline --progress --colors --port 3000",
     "build": "NODE_ENV=production webpack --progress --colors"
   },
@@ -23,6 +23,7 @@
     "css-loader": "^0.23.1",
     "enzyme": "^2.3.0",
     "file-loader": "^0.8.5",
+    "ignore-styles": "^4.0.0",
     "mocha": "^2.5.3",
     "postcss-loader": "^0.8.1",
     "react": "^15.0.0",
