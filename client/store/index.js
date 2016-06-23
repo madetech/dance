@@ -10,10 +10,11 @@ export default function configure(initialState) {
     ? window.devToolsExtension()(createStore)
     : createStore
 
-  const createStoreWithMiddleware = applyMiddleware(
-    logger,
-    thunk
-  )(create)
+  const middlewares = []
+  if (window.devToolsExtension) middlewares.push(logger)
+  middlewares.push(thunk)
+
+  const createStoreWithMiddleware = applyMiddleware(...middlewares)(create)
 
   const store = createStoreWithMiddleware(rootReducer, initialState)
 

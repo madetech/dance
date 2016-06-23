@@ -1,12 +1,14 @@
 import { loadTodos } from '../../../actions/todos'
+import configure from '../../../store'
 
 describe('Loading todos', function () {
   describe('when no todos exist', function () {
     it('should load todos', function (done) {
-      const store = mockStore({})
+      const store = configure({})
 
       store.subscribe(function () {
-        expect(store.getActions()[0]).to.contain({ type: 'add todo' })
+        const { text } = store.getState().todos[0]
+        expect(text).to.contain('Use Redux with thunk')
         done()
       })
 

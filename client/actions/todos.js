@@ -8,8 +8,8 @@ export const completeTodo = createAction('complete todo')
 export const completeAll = createAction('complete all')
 export const clearCompleted = createAction('clear complete')
 
-export const loadTodos = function () {
+export function loadTodos() {
   return (dispatch) => {
-    setTimeout(() => dispatch(addTodo('Use Redux with thunk')), 1000);
-  };
-};
+    setTimeout(() => dispatch(addTodo('Use Redux with thunk')), 1000)
+  }
+}

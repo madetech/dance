@@ -1,6 +1,4 @@
 import { App } from '../../containers/App';
-import MainSection from '../../components/MainSection';
-import TodoItem from '../../components/TodoItem';
 
 describe('<App />', function () {
   describe('when todos exist', function () {
