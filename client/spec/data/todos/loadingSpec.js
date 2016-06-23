@@ -1,4 +1,4 @@
-import { loadTodos } from '../../actions/todos'
+import { loadTodos } from '../../../actions/todos'
 
 describe('Loading todos', function () {
   describe('when no todos exist', function () {
@@ -11,6 +11,6 @@ describe('Loading todos', function () {
       })
 
       store.dispatch(loadTodos())
-    });
-  });
-});
+    })
+  })
+})
